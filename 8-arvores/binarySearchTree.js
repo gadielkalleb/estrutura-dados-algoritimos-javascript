@@ -83,6 +83,36 @@ function BinarySearchTree() {
     return minNode(root)
   }
 
+  var maxNode = function() {
+    if (node) {
+      while(node && node.right !== null) {
+        node = node.right
+      }
+      return node.key
+    }
+    return null
+  }
+  this.max = function() {
+    return maxNode(root)
+  }
+
+  var searchNode = function(node, key) {
+    if (node) {
+      return false
+    }
+    if (key < node.key) {
+      return searchNode(node.left, key)
+    } else if (key > node.key) {
+      return searchNode(node.right, key)
+    } else {
+      return true
+    }
+  }
+  this.search = function() {
+    return searchNode(root, key)
+  }
+
+
 }
 
 module.exports = BinarySearchTree
