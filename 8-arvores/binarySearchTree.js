@@ -1,5 +1,9 @@
 function BinarySearchTree() {
 
+  /**
+   * 
+   * @param {*} key - é chave que compõe um nó da arvore
+   */
   var Node = function(key) {
     this.key = key
     this.left = null
@@ -24,20 +28,6 @@ function BinarySearchTree() {
     }
   }
 
-  var inOrderTraverseNode = function(node, callback) {
-    if (node !== null) {
-      inOrderTraverseNode(node.left, callback)
-      callback(node.key)
-      inOrderTraverseNode(node.right, callback)
-    }
-  }
-
-  var preOrderTraverseNode = function(node, callback) {
-    callback(node.key)
-    preOrderTraverseNode(node.left, callback)
-    preOrderTraverseNode(node.right, callback)
-  }
-
   this.insert = function(key) {
     var newNode = new Node(key)
     if (root === null) {
@@ -46,14 +36,53 @@ function BinarySearchTree() {
       insertNode(root, newNode)
     }
   }
-
+  
+  var inOrderTraverseNode = function(node, callback) {
+    if (node !== null) {
+      inOrderTraverseNode(node.left, callback)
+      callback(node.key)
+      inOrderTraverseNode(node.right, callback)
+    }
+  }
   this.inOrderTraverse = function(callback) {
     inOrderTraverseNode(root, callback)
   }
-
+  
+  var preOrderTraverseNode = function(node, callback) {
+    if(node !== null ) {
+      callback(node.key)
+      preOrderTraverseNode(node.left, callback)
+      preOrderTraverseNode(node.right, callback)
+    }
+  }
   this.preOrderTraverse = function(callback) {
     preOrderTraverseNode(root, callback)
   }
+
+  var postOrdemTraverseNode = function(node, callback) {
+    if(node !== null ) {
+      postOrdemTraverseNode(node.left, callback)
+      postOrdemTraverseNode(node.right, callback)
+      callback(node.key)
+    }
+  }
+  this.postOrdemTraverse = function(callback) {
+    postOrdemTraverseNode(root, callback)
+  }
+
+  var minNode = function(node) {
+    if (node) {
+      while (node && node.left !== null) {
+        node = node.left
+      }
+      return node.key
+    }
+    return null
+  }
+  this.min = function() {
+    return minNode(root)
+  }
+
 }
 
 module.exports = BinarySearchTree
