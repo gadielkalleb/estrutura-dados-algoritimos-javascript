@@ -1,7 +1,7 @@
 function BinarySearchTree() {
 
   var Node = function(key) {
-    this.key(key)
+    this.key = key
     this.left = null
     this.right = null
   }
@@ -24,6 +24,14 @@ function BinarySearchTree() {
     }
   }
 
+  var inOrderTraverseNode = function(node, callback) {
+    if (node !== null) {
+      inOrderTraverseNode(node.left, callback)
+      callback(node.key)
+      inOrderTraverseNode(node.right, callback)
+    }
+  }
+
   this.insert = function(key) {
     var newNode = new Node(key)
     if (root === null) {
@@ -31,6 +39,10 @@ function BinarySearchTree() {
     } else {
       insertNode(root, newNode)
     }
+  }
+
+  this.inOrderTraverse = function(callback) {
+    inOrderTraverseNode(root, callback)
   }
 }
 
