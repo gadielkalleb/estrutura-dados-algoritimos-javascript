@@ -97,7 +97,7 @@ function BinarySearchTree() {
   }
 
   var searchNode = function(node, key) {
-    if (node) {
+    if (node === null) {
       return false
     }
     if (key < node.key) {
@@ -108,7 +108,7 @@ function BinarySearchTree() {
       return true
     }
   }
-  this.search = function() {
+  this.search = function(key) {
     return searchNode(root, key)
   }
 
