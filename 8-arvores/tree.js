@@ -10,7 +10,7 @@ function printNode(value) {
 num.forEach(async n => {
   await tree.insert(n)
 })
-
+ 
 tree.insert(6)
 
 // tree.inOrderTraverse(printNode)
