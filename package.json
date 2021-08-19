@@ -1,0 +1,20 @@
+{
+  "name": "estrutura-de-dados-algoritimos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gadielkalleb/estrutura-dados-algoritimos-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gadielkalleb/estrutura-dados-algoritimos-javascript/issues"
+  },
+  "homepage": "https://github.com/gadielkalleb/estrutura-dados-algoritimos-javascript#readme"
+}
