@@ -10,7 +10,7 @@ function LinkedList() {
     let node = new Node(el)
     let current;
     // primeiro nó da lista
-    if (head === null) head = node 
+    if (head === null) head = node
     else {
       current = head
       // percorre a lista com um laço até encontrar o ultimo elemento
@@ -34,7 +34,7 @@ function LinkedList() {
       } else {
         while (index++ < position) {
           previous = current
-          current = current.next 
+          current = current.next
         }
         node.next = current
         previous.next = node
@@ -93,10 +93,10 @@ function LinkedList() {
       }
       string += current.el + (current.next ? ' ' : null)
       current = current.next
-      
+
     }
     return string
   }
 }
 
-module.exports = LinkedList
+export default LinkedList
