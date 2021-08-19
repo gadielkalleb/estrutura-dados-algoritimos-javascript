@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gadielkalleb/estrutura-dados-algoritimos-javascript.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Gadiel Kaleb (gadiel_kalleb@hotmail.com)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gadielkalleb/estrutura-dados-algoritimos-javascript/issues"
   },
-  "homepage": "https://github.com/gadielkalleb/estrutura-dados-algoritimos-javascript#readme"
+  "homepage": "https://github.com/gadielkalleb/estrutura-dados-algoritimos-javascript#readme",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
 }
