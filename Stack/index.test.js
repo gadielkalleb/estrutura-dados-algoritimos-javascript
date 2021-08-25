@@ -2,6 +2,21 @@ const Stack = require('./')
 
 const stack = new Stack()
 
+const decimalToBinaryBase = remStack => decNumber => {
+  let rem
+  let number = decNumber
+  let binaryString = ''
+  while (number > 0) {
+    rem = Math.floor(number % 2)
+    remStack.push(rem)
+    number = Math.floor(number / 2)
+  }
+  while (!remStack.isEmpty()) {
+    binaryString += remStack.pop().toString()
+  }
+  return binaryString
+}
+
 describe('Stack', () => {
 
   afterEach(() => stack.clear())
@@ -68,5 +83,13 @@ describe('Stack', () => {
     expect(stack.toString()).toContain('2')
     expect(stack.toString()).toContain('3')
     expect(stack.toString()).toContain('hello world')
+  })
+
+  test('decimal to binary', () => {
+    const decimalToBinary = decimalToBinaryBase(stack)
+
+    expect(decimalToBinary(233)).toBe('11101001')
+    expect(decimalToBinary(10)).toBe('1010')
+    expect(decimalToBinary(1000)).toBe('1111101000')
   })
 })
