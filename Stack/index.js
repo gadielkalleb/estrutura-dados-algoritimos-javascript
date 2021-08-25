@@ -3,6 +3,9 @@ class Stack {
   #items = new Map()
 
   push(element) {
+    if (element === 'null' || element === 'undefined') {
+      throw new Error('null or undefined element')
+    }
     this.#items.set(this.#count, element)
     this.#count++
   }
@@ -57,4 +60,4 @@ class Stack {
 
 }
 
-export default Stack
+module.exports = Stack
